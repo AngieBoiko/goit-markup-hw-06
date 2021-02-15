@@ -582,6 +582,7 @@ svg.icon-mail {
   color: var(--main-light-color);
 }
 .subscription-form-button-text::after {
+  display:inline-block;
   content: "";
   background-image: url(../images/svg/send.svg);
   background-size: contain;
