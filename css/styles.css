@@ -62,7 +62,7 @@ a {
   width: 1px !important;
   overflow: hidden;
 }
-/*============HEADER-FOOTER============*/
+/*============HEADER============*/
 
 .logo-link {
   font-family: "Raleway", sans-serif;
@@ -187,24 +187,8 @@ svg.icon-mail {
   letter-spacing: 0.03em;
   color: var(--main-light-color);
 }
-.footer .logo-link {
-  padding: 0;
-  margin-right: 0;
-  margin-bottom: 20px;
-}
-.address-link {
-  color: var(--addres-link-color);
-  transition: color 250ms var(--timing-function);
-}
 
-.footer {
-  padding: 60px 0;
-  background: var(--footer-bg-color);
-}
-.address-item:not(:last-child) {
-  margin-bottom: 9px;
-}
-/*============END HEADER-FOOTER============*/
+/*============END HEADER============*/
 
 /*============HERO============*/
 
@@ -493,6 +477,23 @@ svg.icon-mail {
 /*============END-CLIENTS============*/
 
 /*============FOOTER============*/
+.footer .logo-link {
+  padding: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+.address-link {
+  color: var(--addres-link-color);
+  transition: color 250ms var(--timing-function);
+}
+
+.footer {
+  padding: 60px 0;
+  background: var(--footer-bg-color);
+}
+.address-item:not(:last-child) {
+  margin-bottom: 9px;
+}
 .follow-links-title {
   font-style: normal;
   font-weight: 700;
@@ -573,6 +574,7 @@ svg.icon-mail {
   outline: none;
 }
 .subscription-form-button-text {
+  vertical-align:center;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
@@ -583,6 +585,7 @@ svg.icon-mail {
 }
 .subscription-form-button-text::after {
   display:inline-block;
+  vertical-align:center;
   content: "";
   background-image: url(../images/svg/send.svg);
   background-size: contain;
