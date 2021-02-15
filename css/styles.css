@@ -53,13 +53,13 @@ a {
   padding-left: 15px;
 }
 .visually-hidden {
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0 !important;
-  border: 0 !important;
-  height: 1px !important;
-  width: 1px !important;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
   overflow: hidden;
 }
 /*============HEADER============*/
@@ -525,7 +525,6 @@ svg.icon-mail {
 
 .subscription-form {
   margin-left: auto;
-  margin-top: 72px;
 }
 .subscription-form-title {
   margin-bottom: 20px;
@@ -555,6 +554,7 @@ svg.icon-mail {
   background-color: var(--footer-bg-color);
   color: var(--main-light-color);
 }
+
 .subscription-form-input:placeholder-shown {
   font-size: 16px;
   line-height: 1.25;
@@ -573,8 +573,15 @@ svg.icon-mail {
   border-radius: 4px;
   outline: none;
 }
+.subscription-form-button:focus,
+.subscription-form-button:hover {
+  cursor: pointer;
+}
 .subscription-form-button-text {
-  vertical-align:center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
@@ -584,8 +591,8 @@ svg.icon-mail {
   color: var(--main-light-color);
 }
 .subscription-form-button-text::after {
-  display:inline-block;
-  vertical-align:center;
+  display: inline-block;
+
   content: "";
   background-image: url(../images/svg/send.svg);
   background-size: contain;
@@ -643,6 +650,10 @@ svg.icon-mail {
   fill: var(--logo-light-theme-color);
   cursor: pointer;
 }
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--accent-color);
+}
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -652,7 +663,7 @@ svg.icon-mail {
 
 .modal-title {
   margin-bottom: 12px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
@@ -683,6 +694,7 @@ svg.icon-mail {
 .form-input:focus {
   border-color: var(--accent-color);
   outline: none;
+  cursor: pointer;
 }
 .form-input:focus + .form-icon {
   fill: var(--accent-color);
@@ -713,7 +725,7 @@ svg.icon-mail {
 }
 .modal-form-input-label {
   margin-bottom: 10px;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 1.167;
   letter-spacing: 0.01em;
@@ -733,13 +745,14 @@ svg.icon-mail {
   display: inline-block;
   width: 16px;
   height: 15px;
-  margin-right: 7px;
+  margin-right: 8px;
+
   content: "";
 
-  border-radius: 2px;
   background-image: url(../images/svg/Vector.svg);
   background-size: contain;
   background-color: var(--main-light-color);
+  background-origin: border-box;
 
   transition: background-image 250ms var(--timing-function),
     background-color 250ms var(--timing-function);
@@ -747,20 +760,26 @@ svg.icon-mail {
 .modal-form-checkbox-label {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 30px;
+
   font-size: var(--main-font-size);
   line-height: 1.714;
   letter-spacing: 0.03em;
 
   color: var(--secondary-text-color);
 }
-.modal-form-checkbox:focus + .modal-form-checkbox-label::before,
 .modal-form-checkbox:checked + .modal-form-checkbox-label::before {
   background-image: url(../images/svg/check.svg);
   background-size: contain;
   background-origin: border-box;
   background-color: var(--accent-color);
+  border-radius: 2px;
+}
+.modal-form-checkbox:focus + .modal-form-checkbox-label::before {
+  border: 2px solid var(--accent-color);
+  border-radius: 2px;
 }
 .modal-form-policy-link {
   margin-left: 6px;
@@ -773,7 +792,7 @@ svg.icon-mail {
   padding: 10px 55px;
   align-self: center;
 
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.875;
   text-align: center;
