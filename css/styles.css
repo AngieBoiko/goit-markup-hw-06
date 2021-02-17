@@ -761,7 +761,7 @@ svg.icon-mail {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 30px;
 
   font-size: var(--main-font-size);
